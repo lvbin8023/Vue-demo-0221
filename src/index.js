@@ -6,8 +6,11 @@ import {
   Header
 } from 'mint-ui';
 Vue.component(Header.name, Header);
-//按需导入mui中的组件
+//按需导入mui中的样式
 import './lib/mui/css/mui.min.css';
+
+//导入mui中的icon-extra样式
+import './lib/mui/css/icons-extra.css';
 
 const root = document.createElement('div');
 document.body.append(root);
