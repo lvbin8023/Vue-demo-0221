@@ -7,9 +7,12 @@ Vue.use(VueRouter);
 
 //按需导入mint-ui中的组件
 import {
-  Header
+  Header, Swipe, SwipeItem
 } from 'mint-ui';
 Vue.component(Header.name, Header);
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+
 //按需导入mui中的样式
 import './lib/mui/css/mui.min.css';
 
