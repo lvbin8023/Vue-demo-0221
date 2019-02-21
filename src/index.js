@@ -1,5 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
+import VueRouter from 'vue-router';
+import router from './router.js';
+
+Vue.use(VueRouter);
 
 //按需导入mint-ui中的组件
 import {
@@ -16,5 +20,6 @@ const root = document.createElement('div');
 document.body.append(root);
 
 let vm = new Vue({
-  render: (h) => h(App)
+  render: (h) => h(App),
+  router
 }).$mount(root);
