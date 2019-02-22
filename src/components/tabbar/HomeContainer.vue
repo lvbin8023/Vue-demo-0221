@@ -84,7 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 .mint-swipe {
-  height: 166px;
+  height: 200px;
   .mint-swipe-item {
     width: 100%;
     height: 100%;
