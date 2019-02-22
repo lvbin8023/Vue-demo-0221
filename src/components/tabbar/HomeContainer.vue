@@ -49,20 +49,7 @@
           <div class="mui-media-body">Phone</div>
         </a>
       </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-gear"></span>
-          <div class="mui-media-body">Setting</div>
-        </a>
-      </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
-          <span class="mui-icon mui-icon-more"></span>
-          <div class="mui-media-body">more</div>
-        </a>
-      </li>
     </ul>
-    <h1>这是home组件</h1>
   </div>
 </template>
 
@@ -120,5 +107,13 @@ export default {
     width: 100%;
     height: 100%;
   }*/
+}
+
+.mui-grid-view.mui-grid-9 {
+  background-color: #fff;
+  border: none;
+  .mui-table-view-cell {
+    border: none;
+  }
 }
 </style>
