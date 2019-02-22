@@ -65,6 +65,8 @@ export default {};
 .v-leave-active {
   transition: all .5s ease;
 }
+
+nav {index:1;}
 </style>
 
 
