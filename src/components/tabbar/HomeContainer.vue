@@ -13,40 +13,38 @@
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <span class="mui-icon mui-icon-home"></span>
-          <div class="mui-media-body">Home</div>
+          <img src="../../img/menu1.png" alt="">
+          <div class="mui-media-body">新闻资讯</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <span class="mui-icon mui-icon-email">
-            <span class="mui-badge">5</span>
-          </span>
-          <div class="mui-media-body">Email</div>
+          <img src="../../img/menu2.png" alt="">
+          <div class="mui-media-body">图片分享</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <span class="mui-icon mui-icon-chatbubble"></span>
-          <div class="mui-media-body">Chat</div>
+          <img src="../../img/menu3.png" alt="">
+          <div class="mui-media-body">商品购买</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <span class="mui-icon mui-icon-location"></span>
-          <div class="mui-media-body">location</div>
+          <img src="../../img/menu4.png" alt="">
+          <div class="mui-media-body">留言反馈</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <span class="mui-icon mui-icon-search"></span>
-          <div class="mui-media-body">Search</div>
+          <img src="../../img/menu5.png" alt="">
+          <div class="mui-media-body">休闲专区</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
-          <span class="mui-icon mui-icon-phone"></span>
-          <div class="mui-media-body">Phone</div>
+          <img src="../../img/menu6.png" alt="">
+          <div class="mui-media-body">联系我们</div>
         </a>
       </li>
     </ul>
@@ -86,7 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 .mint-swipe {
-  height: 200px;
+  height: 166px;
   .mint-swipe-item {
     width: 100%;
     height: 100%;
@@ -114,6 +112,12 @@ export default {
   border: none;
   .mui-table-view-cell {
     border: none;
+    img {
+      width: 60px;
+    }
+    .mui-media-body {
+      font-size: 13px;
+    }
   }
 }
 </style>
