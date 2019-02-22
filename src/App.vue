@@ -3,7 +3,9 @@
     <!-- 顶部 Header 区域 -->
     <mt-header fixed title="前端开发-Vue项目"></mt-header>
     <!-- 中间 router-view 区域 -->
-    <router-view></router-view>
+    <transition>
+      <router-view></router-view>
+    </transition>
     <!-- 底部 tabbar 区域 -->
     <nav class="mui-bar mui-bar-tab">
       <router-link class="mui-tab-item" to="/home">
@@ -45,6 +47,23 @@ export default {};
 
 .app-container {
   padding-top: 40px;
+  overflow-x: hidden;
+}
+
+.v-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease;
 }
 </style>
 
