@@ -92,8 +92,8 @@ export default {
   methods: {
     getNewsList() {
       this.axios.get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewList.json").then(result => {
-        if (result.status === 0) {
-          this.newslist = result.message;
+        if (result.data.status === 0) {
+          this.newslist = result.data.message;
         } else {
           Toast("获取新闻列表失败");
         }
