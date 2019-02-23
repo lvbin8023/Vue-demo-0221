@@ -2,11 +2,11 @@ import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
 import router from './router.js';
-// import axios from 'axios';
-// import VueAxios from 'vue-axios';//方便数据请求
+import axios from 'axios';
+import VueAxios from 'vue-axios'; //方便数据请求
 
 Vue.use(VueRouter);
-// Vue.use(VueAxios, axios);
+Vue.use(VueAxios, axios);
 
 //按需导入mint-ui中的组件
 import {
