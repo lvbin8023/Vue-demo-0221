@@ -20,7 +20,9 @@ export default {
       newsinfo: []
     };
   },
-  created() {},
+  created() {
+    this.getNewsInfo();
+  },
   methods: {
     getNewsInfo() {
       this.axios
