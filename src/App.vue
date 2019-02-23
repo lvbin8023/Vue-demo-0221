@@ -46,6 +46,7 @@ export default {};
 }
 
 .app-container {
+  height: 100vh;
   padding-top: 40px;
   overflow-x: hidden;
 }
@@ -63,7 +64,7 @@ export default {};
 
 .v-enter-active,
 .v-leave-active {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 </style>
 
