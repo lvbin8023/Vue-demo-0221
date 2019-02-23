@@ -3,7 +3,7 @@
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
         <a href="javascript:;">
-          <img class="mui-media-object mui-pull-left" src="../../img/cbd.jpg">
+          <img class="mui-media-object mui-pull-left" :src="item.img_url">
           <div class="mui-media-body">
             <h3>{{item.title}}</h3>
             <p class="mui-ellipsis">
