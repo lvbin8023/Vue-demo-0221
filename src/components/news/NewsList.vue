@@ -91,7 +91,7 @@ export default {
   },
   methods: {
     getNewsList() {
-      this.axios.get("https://lvbin8023.github.io/Vue-demo-0221/static/NewList.json").then(result => {
+      this.axios.get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewList.json").then(result => {
         if (result.status === 0) {
           this.newslist = result.message;
         } else {
