@@ -32,7 +32,7 @@ export default {
   methods: {
     getNewsList() {
       this.axios
-        .get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewList.json")
+        .get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewsList.json")
         .then(result => {
           if (result.data.status === 0) {
             this.newslist = result.data.message;
