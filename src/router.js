@@ -1,11 +1,13 @@
 //1、引入vue-router
 import VueRouter from 'vue-router';
 
-//2、导入对应的路由组件
+//2、导入底部tabbar对应的路由组件
 import HomeContainer from './components/tabbar/HomeContainer.vue';
 import VipContainer from './components/tabbar/VipContainer.vue';
 import ShopcarContainer from './components/tabbar/ShopcarContainer.vue';
 import SearchContainer from './components/tabbar/SearchContainer.vue';
+//导入新闻资讯news对应的路由组件
+import NewsList from './components/news/NewsList.vue';
 
 //3、创建路由对象
 const router = new VueRouter({
@@ -28,6 +30,10 @@ const router = new VueRouter({
     {
       path: '/search',
       component: SearchContainer
+    },
+    {
+      path: '/home/newslist',
+      component: NewsList
     }
   ],
   linkActiveClass: 'mui-active'
