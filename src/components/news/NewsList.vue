@@ -2,7 +2,7 @@
   <div>
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
-        <a href="javascript:;">
+        <router-link :to="'/home/newsinfo/' + item.id">
           <img class="mui-media-object mui-pull-left" :src="item.img_url">
           <div class="mui-media-body">
             <h3>{{item.title}}</h3>
@@ -11,7 +11,7 @@
               <span>点击：{{item.click}}次</span>
             </p>
           </div>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -31,13 +31,15 @@ export default {
   },
   methods: {
     getNewsList() {
-      this.axios.get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewList.json").then(result => {
-        if (result.data.status === 0) {
-          this.newslist = result.data.message;
-        } else {
-          Toast("获取新闻列表失败");
-        }
-      });
+      this.axios
+        .get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewList.json")
+        .then(result => {
+          if (result.data.status === 0) {
+            this.newslist = result.data.message;
+          } else {
+            Toast("获取新闻列表失败");
+          }
+        });
     }
   }
 };

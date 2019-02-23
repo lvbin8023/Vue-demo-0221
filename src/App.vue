@@ -38,6 +38,7 @@ export default {};
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   &::before,
   &::after {
     margin: 0;
@@ -48,6 +49,7 @@ export default {};
 .app-container {
   height: 100vh;
   padding-top: 40px;
+  padding-bottom: 50px;
   overflow-x: hidden;
 }
 

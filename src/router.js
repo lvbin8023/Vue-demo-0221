@@ -6,8 +6,10 @@ import HomeContainer from './components/tabbar/HomeContainer.vue';
 import VipContainer from './components/tabbar/VipContainer.vue';
 import ShopcarContainer from './components/tabbar/ShopcarContainer.vue';
 import SearchContainer from './components/tabbar/SearchContainer.vue';
-//导入新闻资讯news对应的路由组件
+//导入新闻资讯news跳转的路由组件
 import NewsList from './components/news/NewsList.vue';
+//导入新闻详情newslist跳转的路由组件
+import NewsInfo from './components/news/NewsInfo.vue';
 
 //3、创建路由对象
 const router = new VueRouter({
@@ -34,6 +36,10 @@ const router = new VueRouter({
     {
       path: '/home/newslist',
       component: NewsList
+    },
+    {
+      path: '/home/newsinfo/:id',
+      component: NewsInfo
     }
   ],
   linkActiveClass: 'mui-active'
