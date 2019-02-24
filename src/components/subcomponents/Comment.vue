@@ -6,11 +6,13 @@
     <mt-button type="primary" size="large">发表评论</mt-button>
     <div class="comment-list" v-for="(item,i) in comments" :key="item.id">
       <div class="comment-item">
-        <h3 class="comment-title">第{{i+1}}楼&nbsp;&nbsp;用户：{{item.user_name}}&nbsp;&nbsp;发表时间：{{item.add_time}}</h3>
+        <h3
+          class="comment-title"
+        >第{{i+1}}楼&nbsp;&nbsp;用户：{{item.user_name}}&nbsp;&nbsp;发表时间：{{item.add_time}}</h3>
         <p class="comment-body">{{item.content}}</p>
       </div>
     </div>
-    <mt-button type="danger" size="large">加载更多</mt-button>
+    <mt-button type="danger" size="large" plain @click="getMore">加载更多</mt-button>
   </div>
 </template>
 
@@ -33,11 +35,14 @@ export default {
         .get("https://lvbin8023.github.io/Vue-demo-0221/dist/Comment.json")
         .then(result => {
           if (result.data.status === 0) {
-            this.comments = result.data.message;
+            this.comments = this.comments.concat(result.data.message);
           } else {
             Toast("获取评论失败");
           }
         });
+    },
+    getMore() {
+      this.getComments();
     }
   }
 };
