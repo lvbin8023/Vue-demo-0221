@@ -10,18 +10,6 @@
         <p class="comment-body">锄禾日当午，汗滴禾下土</p>
       </div>
     </div>
-    <div class="comment-list">
-      <div class="comment-item">
-        <h3 class="comment-title">第1楼&nbsp;&nbsp;用户：匿名用户&nbsp;&nbsp;发表时间：2012-12-12 12:12:12</h3>
-        <p class="comment-body">锄禾日当午，汗滴禾下土</p>
-      </div>
-    </div>
-    <div class="comment-list">
-      <div class="comment-item">
-        <h3 class="comment-title">第1楼&nbsp;&nbsp;用户：匿名用户&nbsp;&nbsp;发表时间：2012-12-12 12:12:12</h3>
-        <p class="comment-body">锄禾日当午，汗滴禾下土</p>
-      </div>
-    </div>
     <mt-button type="danger" size="large">加载更多</mt-button>
   </div>
 </template>
