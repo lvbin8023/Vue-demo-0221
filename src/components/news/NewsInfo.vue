@@ -11,7 +11,7 @@
     <!-- 内容区域 -->
     <div class="content" v-html="newsinfo.content"></div>
     <!-- 评论子组件区域 -->
-    <comment-box></comment-box>
+    <comment-box :id="this.id"></comment-box>
   </div>
 </template>
 
