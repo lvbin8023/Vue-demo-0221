@@ -12,11 +12,13 @@ Vue.use(VueAxios, axios);
 import {
   Header,
   Swipe,
-  SwipeItem
+  SwipeItem,
+  Button
 } from 'mint-ui';
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
 
 //按需导入mui中的样式
 import './lib/mui/css/mui.min.css';

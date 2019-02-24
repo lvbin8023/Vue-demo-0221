@@ -1,17 +1,25 @@
 <template>
   <div class="newsinfo-container">
+    <!-- 大标题 -->
     <h3 class="title">{{newsinfo.title}}</h3>
+    <!-- 小标题 -->
     <p class="subtitle">
       <span>发表时间：{{newsinfo.add_time}}</span>
       <span>点击：{{newsinfo.click}}次</span>
     </p>
     <hr>
+    <!-- 内容区域 -->
     <div class="content" v-html="newsinfo.content"></div>
+    <!-- 评论子组件区域 -->
+    <comment-box></comment-box>
   </div>
 </template>
 
 <script>
+//导入Toast
 import { Toast } from "mint-ui";
+//导入评论子组件
+import comment from "../subcomponents/Comment.vue";
 
 export default {
   data() {
@@ -29,12 +37,15 @@ export default {
         .get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewsInfo.json")
         .then(result => {
           if (result.data.status === 0) {
-            this.newsinfo = result.data.message[this.id-1];
+            this.newsinfo = result.data.message[this.id - 1];
           } else {
             Toast("获取新闻失败");
           }
         });
     }
+  },
+  components: {
+    "comment-box": comment
   }
 };
 </script>
