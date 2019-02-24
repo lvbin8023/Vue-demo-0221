@@ -29,7 +29,7 @@ export default {
         .get("https://lvbin8023.github.io/Vue-demo-0221/dist/NewsInfo.json")
         .then(result => {
           if (result.data.status === 0) {
-            this.newsinfo = result.data.message[0];
+            this.newsinfo = result.data.message[this.id-1];
           } else {
             Toast("获取新闻失败");
           }
