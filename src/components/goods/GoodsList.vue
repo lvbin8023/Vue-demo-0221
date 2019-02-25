@@ -1,86 +1,16 @@
 <template>
   <div class="goods-list">
-    <div class="goods-item">
-      <img src="../../img/小米6X.jpg" alt="">
-      <h1 class=title>小米（Mi）小米6X 64G全网通版</h1>
+    <div class="goods-item" v-for="item in goodslist" :key="item.id">
+      <img :src="item.img_url" alt>
+      <h1 class="title">{{item.title}}</h1>
       <div class="info">
         <p class="price">
-          <span class="now">￥1299</span>
-          <span class="old">￥1499</span>
+          <span class="now">￥{{item.sell_price}}</span>
+          <span class="old">￥{{item.market_price}}</span>
         </p>
         <p class="sell">
           <span>热卖中</span>
-          <span>剩60件</span>
-        </p>
-      </div>
-    </div>
-    <div class="goods-item">
-      <img src="../../img/小米8SE.jpg" alt="">
-      <h1 class=title>小米（Mi）小米8SE 64G全网通版</h1>
-      <div class="info">
-        <p class="price">
-          <span class="now">￥1599</span>
-          <span class="old">￥1999</span>
-        </p>
-        <p class="sell">
-          <span>热卖中</span>
-          <span>剩80件</span>
-        </p>
-      </div>
-    </div>
-    <div class="goods-item">
-      <img src="../../img/小米8青春版.jpg" alt="">
-      <h1 class=title>小米（Mi）小米8 青春版 64G全网通版</h1>
-      <div class="info">
-        <p class="price">
-          <span class="now">￥1299</span>
-          <span class="old">￥1399</span>
-        </p>
-        <p class="sell">
-          <span>热卖中</span>
-          <span>剩100件</span>
-        </p>
-      </div>
-    </div>
-    <div class="goods-item">
-      <img src="../../img/小米6X.jpg" alt="">
-      <h1 class=title>小米（Mi）小米6X 64G全网通版</h1>
-      <div class="info">
-        <p class="price">
-          <span class="now">￥1299</span>
-          <span class="old">￥1499</span>
-        </p>
-        <p class="sell">
-          <span>热卖中</span>
-          <span>剩60件</span>
-        </p>
-      </div>
-    </div>
-    <div class="goods-item">
-      <img src="../../img/小米8SE.jpg" alt="">
-      <h1 class=title>小米（Mi）小米8SE 64G全网通版</h1>
-      <div class="info">
-        <p class="price">
-          <span class="now">￥1599</span>
-          <span class="old">￥1999</span>
-        </p>
-        <p class="sell">
-          <span>热卖中</span>
-          <span>剩80件</span>
-        </p>
-      </div>
-    </div>
-    <div class="goods-item">
-      <img src="../../img/小米8青春版.jpg" alt="">
-      <h1 class=title>小米（Mi）小米8 青春版 64G全网通版</h1>
-      <div class="info">
-        <p class="price">
-          <span class="now">￥1299</span>
-          <span class="old">￥1399</span>
-        </p>
-        <p class="sell">
-          <span>热卖中</span>
-          <span>剩100件</span>
+          <span>剩{{item.stock_quantity}}件</span>
         </p>
       </div>
     </div>
@@ -88,21 +18,31 @@
 </template>
 
 <script>
+import Toast from "mint-ui";
+
 export default {
   data() {
     return {
-
-    }
+      goodslist: []
+    };
   },
   created() {
-
+    this.getGoodList();
   },
-  methods:{
+  methods: {
     getGoodList() {
-      this.axios.get("https://lvbin8023.github.io/Vue-demo-0221/dist/GoodsList.json")
+      this.axios
+        .get("https://lvbin8023.github.io/Vue-demo-0221/dist/GoodsList.json")
+        .then(result => {
+          if (result.data.status === 0) {
+            this.goodslist = result.data.message;
+          } else {
+            Toast("获取列表失败");
+          }
+        });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -151,7 +91,6 @@ export default {
         font-size: 13px;
       }
     }
-
   }
 }
 </style>
