@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "message": [{
+      "id": 1,
+      "img_url": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B36X.jpg",
+      "title": "小米（Mi）小米6X 64G全网通版",
+      "add_time": "2008-08-08 08:08:08",
+      "zhaiyao": "小米6X手机",
+      "click": 266,
+      "sell_price": 1299,
+      "market_price": 1499,
+      "stockquantity": 60
+    },
+    {
+      "id": 2,
+      "img_url": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38SE.jpg",
+      "title": "小米（Mi）小米8SE 64G全网通版",
+      "add_time": "2010-10-10 10:10:10",
+      "zhaiyao": "小米8SE手机",
+      "click": 278,
+      "sell_price": 1599,
+      "market_price": 1999,
+      "stockquantity": 80
+    },
+    {
+      "id": 3,
+      "img_url": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38%E9%9D%92%E6%98%A5%E7%89%88.jpg",
+      "title": "小米（Mi）小米8 青春版 64G全网通版",
+      "add_time": "2012-12-12 12:12:12",
+      "zhaiyao": "小米8青春版手机",
+      "click": 286,
+      "sell_price": 1299,
+      "market_price": 1399,
+      "stockquantity": 1000
+    },
+    {
+      "id": 4,
+      "img_url": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B36X.jpg",
+      "title": "小米（Mi）小米6X 64G全网通版",
+      "add_time": "2008-08-08 08:08:08",
+      "zhaiyao": "小米6X手机",
+      "click": 266,
+      "sell_price": 1299,
+      "market_price": 1499,
+      "stockquantity": 60
+    },
+    {
+      "id": 5,
+      "img_url": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38SE.jpg",
+      "title": "小米（Mi）小米8SE 64G全网通版",
+      "add_time": "2010-10-10 10:10:10",
+      "zhaiyao": "小米8SE手机",
+      "click": 278,
+      "sell_price": 1599,
+      "market_price": 1999,
+      "stockquantity": 80
+    },
+    {
+      "id": 6,
+      "img_url": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38%E9%9D%92%E6%98%A5%E7%89%88.jpg",
+      "title": "小米（Mi）小米8 青春版 64G全网通版",
+      "add_time": "2012-12-12 12:12:12",
+      "zhaiyao": "小米8青春版手机",
+      "click": 286,
+      "sell_price": 1299,
+      "market_price": 1399,
+      "stockquantity": 1000
+    }
+  ]
+}

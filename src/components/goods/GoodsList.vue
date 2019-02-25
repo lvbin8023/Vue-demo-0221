@@ -84,20 +84,6 @@
         </p>
       </div>
     </div>
-    <div class="goods-item">
-      <img src="../../img/小米6X.jpg" alt="">
-      <h1 class=title>小米（Mi）小米6X 64G全网通版</h1>
-      <div class="info">
-        <p class="price">
-          <span class="now">￥1299</span>
-          <span class="old">￥1499</span>
-        </p>
-        <p class="sell">
-          <span>热卖中</span>
-          <span>剩60件</span>
-        </p>
-      </div>
-    </div>
   </div>
 </template>
 
