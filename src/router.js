@@ -13,6 +13,8 @@ import NewsInfo from './components/news/NewsInfo.vue';
 import PhotoList from './components/photos/PhotoList.vue';
 //导入商品购买GoodsList跳转的路由组件
 import GoodsList from './components/goods/GoodsList.vue';
+//导入商品详情组件
+import GoodsInfo from './components/goods/GoodsInfo.vue';
 
 //3、创建路由对象
 const router = new VueRouter({
@@ -51,6 +53,10 @@ const router = new VueRouter({
     {
       path: '/home/goodslist',
       component: GoodsList
+    },
+    {
+      path: '/home/goodsinfo/:id',
+      component: GoodsInfo
     }
   ],
   linkActiveClass: 'mui-active'
