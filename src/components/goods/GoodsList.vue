@@ -14,6 +14,7 @@
         </p>
       </div>
     </div>
+    <mt-button type="danger" size="large" @click="getMore">加载更多</mt-button>
   </div>
 </template>
 
@@ -35,11 +36,14 @@ export default {
         .get("https://lvbin8023.github.io/Vue-demo-0221/dist/GoodsList.json")
         .then(result => {
           if (result.data.status === 0) {
-            this.goodslist = result.data.message;
+            this.goodslist = this.goodslist.concat(result.data.message);
           } else {
             Toast("获取列表失败");
           }
         });
+    },
+    getMore() {
+      this.getGoodList();
     }
   }
 };
