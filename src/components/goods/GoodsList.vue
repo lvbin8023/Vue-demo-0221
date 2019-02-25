@@ -89,7 +89,19 @@
 
 <script>
 export default {
-  
+  data() {
+    return {
+
+    }
+  },
+  created() {
+
+  },
+  methods:{
+    getGoodList() {
+      this.axios.get("https://lvbin8023.github.io/Vue-demo-0221/dist/GoodsList.json")
+    }
+  }
 }
 </script>
 
