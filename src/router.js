@@ -10,6 +10,9 @@ import SearchContainer from './components/tabbar/SearchContainer.vue';
 import NewsList from './components/news/NewsList.vue';
 //导入新闻详情newslist跳转的路由组件
 import NewsInfo from './components/news/NewsInfo.vue';
+import PhotoList from './components/photos/PhotoList.vue';
+//导入商品购买GoodsList跳转的路由组件
+import GoodsList from './components/goods/GoodsList.vue';
 
 //3、创建路由对象
 const router = new VueRouter({
@@ -40,6 +43,14 @@ const router = new VueRouter({
     {
       path: '/home/newsinfo/:id',
       component: NewsInfo
+    },
+    {
+      path: '/home/photolist',
+      component: PhotoList
+    },
+    {
+      path: '/home/goodslist',
+      component: GoodsList
     }
   ],
   linkActiveClass: 'mui-active'

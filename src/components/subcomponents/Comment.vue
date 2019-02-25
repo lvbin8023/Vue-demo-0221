@@ -2,8 +2,8 @@
   <div class="comment-container">
     <h3>评论区：</h3>
     <hr>
-    <textarea placeholder="请输入要评论的内容（字数不超过120字）" maxlength="120"></textarea>
-    <mt-button type="primary" size="large">发表评论</mt-button>
+    <textarea placeholder="请输入要评论的内容（字数不超过120字）" maxlength="120" v-model="msg"></textarea>
+    <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
     <div class="comment-list" v-for="(item,i) in comments" :key="item.id">
       <div class="comment-item">
         <h3
@@ -22,7 +22,8 @@ import Toast from "mint-ui";
 export default {
   data() {
     return {
-      comments: []
+      comments: [],
+      msg: ""
     };
   },
   props: ["id"],
@@ -43,6 +44,26 @@ export default {
     },
     getMore() {
       this.getComments();
+    },
+    postComment() {
+      if (this.msg.trim().length === 0) {
+        return Toast("评论内容不能为空！");
+      }
+      this.axios
+        .post("https://lvbin8023.github.io/Vue-demo-0221/dist/Comment.json", {
+          content: this.msg.trim()
+        })
+        .then(result => {
+          if (result.data.status===0) {
+            let comments = {
+              user_name:"匿名用户",
+              add_time:Date.now(),
+              content:this.msg.trim()
+            };
+            this.comments.unshift(comments);
+            this.msg = '';
+          }
+        });
     }
   }
 };
@@ -57,7 +78,7 @@ export default {
     font-size: 14px;
     height: 85px;
     margin: 0;
-    padding: 0;
+    padding: 8px;
   }
   .comment-list {
     margin: 8px 0;
