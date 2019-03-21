@@ -69,7 +69,6 @@ export default {
     },
     goDetail(id) {
       this.$router.push("/home/goodsinfo/" + id);
-      console.log(id);
     }
   }
 };

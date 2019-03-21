@@ -15,6 +15,10 @@ import PhotoList from './components/photos/PhotoList.vue';
 import GoodsList from './components/goods/GoodsList.vue';
 //导入商品详情组件
 import GoodsInfo from './components/goods/GoodsInfo.vue';
+//导入商品介绍页面
+import GoodsDesc from './components/goods/GoodsDesc.vue';
+//导入商品评论页面
+import GoodsComment from './components/goods/GoodsComment.vue';
 
 //3、创建路由对象
 const router = new VueRouter({
@@ -57,6 +61,16 @@ const router = new VueRouter({
     {
       path: '/home/goodsinfo/:id',
       component: GoodsInfo
+    },
+    {
+      path: '/home/goodsdesc/:id',
+      component: GoodsDesc,
+      name: 'goodsdesc'
+    },
+    {
+      path: '/home/goodscomment/:id',
+      component: GoodsComment,
+      name: 'goodscomment'
     }
   ],
   linkActiveClass: 'mui-active'
