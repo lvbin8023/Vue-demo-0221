@@ -18,13 +18,13 @@
     </div>
     <!-- 商品购买区域 -->
     <div class="mui-card">
-      <div class="mui-card-header">商品的名称</div>
+      <div class="mui-card-header">{{goodsinfo.title}}</div>
       <div class="mui-card-content">
         <div class="mui-card-content-inner">
           <p class="price">
             市场价：
-            <del>￥2399</del>&nbsp;&nbsp;销售价：
-            <span class="now_price">￥2199</span>
+            <del>￥{{goodsinfo.market_price}}</del>&nbsp;&nbsp;销售价：
+            <span class="now_price">￥{{goodsinfo.sell_price}}</span>
           </p>
           <p>购买数量：
             <numbox></numbox>
@@ -41,9 +41,9 @@
       <div class="mui-card-header">商品参数</div>
       <div class="mui-card-content">
         <div class="mui-card-content-inner">
-          <p>商品货号：</p>
-          <p>库存数量：</p>
-          <p>上架时间：</p>
+          <p>商品货号：{{goodsinfo.goods_no}}</p>
+          <p>库存数量：{{goodsinfo.stock_quantity}}</p>
+          <p>上架时间：{{goodsinfo.add_time}}</p>
         </div>
       </div>
       <div class="mui-card-footer">
@@ -56,10 +56,34 @@
 </template>
 
 <script>
+import Toast from "mint-ui";
 //导入数字选择框组件
 import numbox from "../subcomponents/Goodsinfo_numberbox.vue";
 
 export default {
+  data() {
+    return {
+      id: this.$route.params.id,
+      goodsinfo: []
+    };
+  },
+  created() {
+    this.getGoodsInfo();
+  },
+  methods: {
+    getGoodsInfo() {
+      this.axios
+        .get("https://lvbin8023.github.io/Vue-demo-0221/dist/GoodsInfo.json")
+        .then(result => {
+          if (result.data.status === 0) {
+            this.goodsinfo = result.data.message[this.id - 1];
+            console.log(result.data.message[this.id - 1]);
+          } else {
+            Toast("获取列表失败");
+          }
+        });
+    }
+  },
   components: {
     numbox
   }
