@@ -18,34 +18,52 @@
     </div>
     <!-- 商品购买区域 -->
     <div class="mui-card">
-      <div class="mui-card-header">页眉</div>
+      <div class="mui-card-header">商品的名称</div>
       <div class="mui-card-content">
-        <div class="mui-card-content-inner">包含页眉页脚的卡片，页眉常用来显示面板标题，页脚用来显示额外信息或支持的操作（比如点赞、评论等）</div>
+        <div class="mui-card-content-inner">
+          <p class="price">
+            市场价：
+            <del>￥2399</del>&nbsp;&nbsp;销售价：
+            <span class="now_price">￥2199</span>
+          </p>
+          <p>购买数量：
+            <numbox></numbox>
+          </p>
+          <p>
+            <mt-button type="primary" size="small">立即购买</mt-button>
+            <mt-button type="danger" size="small">加入购物车</mt-button>
+          </p>
+        </div>
       </div>
-      <div class="mui-card-footer">页脚</div>
     </div>
     <!-- 商品参数区域 -->
     <div class="mui-card">
-      <div
-        class="mui-card-header mui-card-media"
-        style="height:40vw;background-image:url('//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/cbd.jpg')"
-      ></div>
+      <div class="mui-card-header">商品参数</div>
       <div class="mui-card-content">
         <div class="mui-card-content-inner">
-          <p>Posted on January 18, 2016</p>
-          <p style="color: #333;">这里显示文章摘要，让读者对文章内容有个粗略的概念...</p>
+          <p>商品货号：</p>
+          <p>库存数量：</p>
+          <p>上架时间：</p>
         </div>
       </div>
       <div class="mui-card-footer">
-        <a class="mui-card-link">Like</a>
-        <a class="mui-card-link">Read more</a>
+        <mt-button type="primary" size="large" plain>图文介绍</mt-button>
+        <br>
+        <mt-button type="danger" size="large" plain>商品评论</mt-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+//导入数字选择框组件
+import numbox from "../subcomponents/Goodsinfo_numberbox.vue";
+
+export default {
+  components: {
+    numbox
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -53,27 +71,36 @@ export default {};
   background-color: #eee;
   overflow: hidden;
   .mint-swipe {
-  height: 200px;
-  .mint-swipe-item {
-    width: 100%;
-    height: 100%;
-    &:nth-child(1) {
-      background: url("../../img/1.jpg") center no-repeat;
-      background-size: cover;
+    height: 200px;
+    .mint-swipe-item {
+      height: 100%;
+      &:nth-child(1) {
+        background: url("../../img/1.jpg") center no-repeat;
+        background-size: cover;
+      }
+      &:nth-child(2) {
+        background: url("../../img/2.jpg") center no-repeat;
+        background-size: cover;
+      }
+      &:nth-child(3) {
+        background: url("../../img/3.jpg") center no-repeat;
+        background-size: cover;
+      }
     }
-    &:nth-child(2) {
-      background: url("../../img/2.jpg") center no-repeat;
-      background-size: cover;
-    }
-    &:nth-child(3) {
-      background: url("../../img/3.jpg") center no-repeat;
-      background-size: cover;
-    }
-  }
-  /*img *{
+    /*img *{
     width: 100%;
     height: 100%;
   }*/
-}
+  }
+
+  .now_price {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .mui-card-footer {
+    display: block;
+  }
 }
 </style>
