@@ -29,8 +29,9 @@
             <del>￥{{goodsinfo.market_price}}</del>&nbsp;&nbsp;销售价：
             <span class="now_price">￥{{goodsinfo.sell_price}}</span>
           </p>
-          <p>购买数量：
-            <numbox></numbox>
+          <p>
+            购买数量：
+            <numbox @getcount="getSelectedCount" :max="goodsinfo.stock_quantity"></numbox>
           </p>
           <p>
             <mt-button type="primary" size="small">立即购买</mt-button>
@@ -68,8 +69,12 @@ export default {
     return {
       id: this.$route.params.id,
       goodsinfo: [],
-      ballFlag: false
+      ballFlag: false,
+      selectedCount: 1
     };
+  },
+  components: {
+    numbox
   },
   created() {
     this.getGoodsInfo();
@@ -114,10 +119,11 @@ export default {
     },
     afterEnter(el) {
       this.ballFlag = !this.ballFlag;
+    },
+    getSelectedCount(count) {
+      this.selectedCount = count;
+      console.log(`父组件能拿到的数据：${this.selectedCount}`);
     }
-  },
-  components: {
-    numbox
   }
 };
 </script>
