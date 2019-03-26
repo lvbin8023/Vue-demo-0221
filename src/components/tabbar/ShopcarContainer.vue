@@ -2,15 +2,15 @@
   <div class="shop-container">
     <div class="goods-list">
       <!-- 商品列表区域 -->
-      <div class="mui-card">
+      <div class="mui-card" v-for="item in goodslist" :key="item.id">
         <div class="mui-card-content">
           <div class="mui-card-content-inner">
             <mt-switch></mt-switch>
-            <img src="//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B36X.jpg">
+            <img :src="item.thumb_path">
             <div class="info">
-              <h1>小米（Mi）小米6X 64G全网通版</h1>
+              <h1>{{item.title}}</h1>
               <p>
-                <span class="price">￥1299</span>
+                <span class="price">￥{{item.sell_price}}</span>
                 <numbox></numbox>
                 <a href="#">删除</a>
               </p>
@@ -45,7 +45,7 @@ export default {
   methods: {
     getShopCarList() {
       this.$store.state.car.forEach(item => {
-        this.idArray.push(item[id - 1]);
+        this.idArray.push(item.id);
       });
       if (this.idArray.length <= 0) {
         return;
@@ -54,7 +54,10 @@ export default {
         .get("https://lvbin8023.github.io/Vue-demo-0221/dist/ShopCarList.json")
         .then(result => {
           if (result.data.status === 0) {
-            this.goodslist = result.data.message[this.idArray];
+            for (let i = 0; i < this.idArray.length; i++) {
+              let string = result.data.message[this.idArray[i]];
+              this.goodslist.push(string);
+            }
           } else {
             Toast("获取列表失败");
           }
