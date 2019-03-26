@@ -30,8 +30,37 @@
 
 <script>
 import numbox from "../subcomponents/Shopcar_numbox.vue";
+import Toast from "mint-ui";
 
 export default {
+  data() {
+    return {
+      goodslist: [],
+      idArray: []
+    };
+  },
+  created() {
+    this.getShopCarList();
+  },
+  methods: {
+    getShopCarList() {
+      this.$store.state.car.forEach(item => {
+        this.idArray.push(item[id - 1]);
+      });
+      if (this.idArray.length <= 0) {
+        return;
+      }
+      this.axios
+        .get("https://lvbin8023.github.io/Vue-demo-0221/dist/ShopCarList.json")
+        .then(result => {
+          if (result.data.status === 0) {
+            this.goodslist = result.data.message[this.idArray];
+          } else {
+            Toast("获取列表失败");
+          }
+        });
+    }
+  },
   components: {
     numbox
   }

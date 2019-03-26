@@ -31,7 +31,15 @@
 </template>
 
 <script>
-export default {};
+import mui from "./lib/mui/js/mui.min.js";
+
+export default {
+  mounted() {
+    mui("body").on("click", "a", function() {
+      document.location.href = this.href;
+    });
+  }
+};
 </script>
 
 <style lang="scss" scoped>
