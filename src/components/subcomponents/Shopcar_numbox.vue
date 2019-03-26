@@ -8,6 +8,7 @@
       :value="initcount"
       @change="countChanged"
       ref="numberbox"
+      readonly
     >
     <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
   </div>
@@ -22,9 +23,14 @@ export default {
     mui(".mui-numbox").numbox();
   },
   methods: {
-    countChanged() {}
+    countChanged() {
+      this.$store.commit("upDateCar", {
+        id: this.goodid,
+        count: this.$refs.numberbox.value
+      });
+    }
   },
-  props: ["initcount"]
+  props: ["initcount", "goodid"]
 };
 </script>
 

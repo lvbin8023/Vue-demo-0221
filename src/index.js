@@ -19,7 +19,7 @@ let store = new Vuex.Store({
     addToCar(state, goodsinfo) {
       let flag = false;
       state.car.some(item => {
-        if (item.id === goodsinfo.id) {
+        if (item.id == goodsinfo.id) {
           item.count += parseInt(goodsinfo.count);
           flag = true;
           return true;
@@ -28,6 +28,15 @@ let store = new Vuex.Store({
       if (!flag) {
         state.car.push(goodsinfo);
       }
+      localStorage.setItem("car", JSON.stringify(state.car));
+    },
+    upDateCar(state, goodsinfo) {
+      state.car.some(item => {
+        if (item.id == goodsinfo.id) {
+          item.count = parseInt(goodsinfo.count);
+          return true;
+        }
+      });
       localStorage.setItem("car", JSON.stringify(state.car));
     }
   },
