@@ -32,7 +32,7 @@
         </p>
         <p class="sell">
           <span>热卖中</span>
-          <span>剩{{item.stock_quantity}}件</span>
+          <span>剩{{item.stockquantity}}件</span>
         </p>
       </div>
     </div>

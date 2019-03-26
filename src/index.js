@@ -38,12 +38,25 @@ let store = new Vuex.Store({
         counts += item.count;
       });
       return counts;
+    },
+    getGoodsCount(state) {
+      let c = {};
+      state.car.forEach(item => {
+        c[item.id] = item.count;
+      });
+      return c;
     }
   }
 });
 
 //按需导入mint-ui中的组件
-import { Header, Swipe, SwipeItem, Button, Switch } from "mint-ui";
+import {
+  Header,
+  Swipe,
+  SwipeItem,
+  Button,
+  Switch
+} from "mint-ui";
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);

@@ -5,7 +5,7 @@
       id="test"
       class="mui-input-numbox"
       type="number"
-      value="1"
+      :value="initcount"
       @change="countChanged"
       ref="numberbox"
     >
@@ -23,7 +23,8 @@ export default {
   },
   methods: {
     countChanged() {}
-  }
+  },
+  props: ["initcount"]
 };
 </script>
 

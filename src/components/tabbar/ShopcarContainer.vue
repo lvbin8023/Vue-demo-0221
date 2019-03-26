@@ -11,7 +11,7 @@
               <h1>{{item.title}}</h1>
               <p>
                 <span class="price">￥{{item.sell_price}}</span>
-                <numbox></numbox>
+                <numbox :initcount="$store.getters.getGoodsCount[item.id]"></numbox>
                 <a href="#">删除</a>
               </p>
             </div>
@@ -55,7 +55,7 @@ export default {
         .then(result => {
           if (result.data.status === 0) {
             for (let i = 0; i < this.idArray.length; i++) {
-              let string = result.data.message[this.idArray[i]];
+              let string = result.data.message[parseInt(this.idArray[i]) - 1];
               this.goodslist.push(string);
             }
           } else {

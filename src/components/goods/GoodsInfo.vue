@@ -129,7 +129,6 @@ export default {
     },
     getSelectedCount(count) {
       this.selectedCount = count;
-      console.log(`父组件能拿到的数据：${this.selectedCount}`);
     }
   }
 };
