@@ -1,0 +1,51 @@
+{
+  "status": 0,
+  "message": [{
+      "cou": 1,
+      "id": 1,
+      "thumb_path": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B36X.jpg",
+      "title": "小米（Mi）小米6X 64G全网通版",
+      "sell_price": 1299
+    },
+    {
+      "cou": 1,
+      "id": 2,
+      "thumb_path": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38SE.jpg",
+      "title": "小米（Mi）小米8SE 64G全网通版",
+      "add_time": "2010-10-10 10:10:10",
+      "sell_price": 1599
+    },
+    {
+      "cou": 1,
+      "id": 3,
+      "thumb_path": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38%E9%9D%92%E6%98%A5%E7%89%88.jpg",
+      "title": "小米（Mi）小米8 青春版 64G全网通版",
+      "add_time": "2012-12-12 12:12:12",
+      "sell_price": 1299
+    },
+    {
+      "cou": 1,
+      "id": 4,
+      "thumb_path": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B36X.jpg",
+      "title": "小米（Mi）小米6X 64G全网通版",
+      "add_time": "2008-08-08 08:08:08",
+      "sell_price": 1299
+    },
+    {
+      "cou": 1,
+      "id": 5,
+      "thumb_path": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38SE.jpg",
+      "title": "小米（Mi）小米8SE 64G全网通版",
+      "add_time": "2010-10-10 10:10:10",
+      "sell_price": 1599
+    },
+    {
+      "cou": 1,
+      "id": 6,
+      "thumb_path": "//skyuyuni-image.oss-cn-hangzhou.aliyuncs.com/%E5%B0%8F%E7%B1%B38%E9%9D%92%E6%98%A5%E7%89%88.jpg",
+      "title": "小米（Mi）小米8 青春版 64G全网通版",
+      "add_time": "2012-12-12 12:12:12",
+      "sell_price": 1299
+    }
+  ]
+}

@@ -44,6 +44,7 @@ export default {};
     margin: 0;
     padding: 0;
   }
+  touch-action: pan-y;
 }
 
 .app-container {

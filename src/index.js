@@ -43,11 +43,12 @@ let store = new Vuex.Store({
 });
 
 //按需导入mint-ui中的组件
-import { Header, Swipe, SwipeItem, Button } from "mint-ui";
+import { Header, Swipe, SwipeItem, Button, Switch } from "mint-ui";
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Button.name, Button);
+Vue.component(Switch.name, Switch);
 
 //按需导入mui中的样式
 import "./lib/mui/css/mui.min.css";
