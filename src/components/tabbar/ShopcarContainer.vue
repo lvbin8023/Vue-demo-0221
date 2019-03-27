@@ -5,7 +5,10 @@
       <div class="mui-card" v-for="(item,index) in goodslist" :key="item.id">
         <div class="mui-card-content">
           <div class="mui-card-content-inner">
-            <mt-switch></mt-switch>
+            <mt-switch
+              v-model="$store.getters.getGoodsSelected[item.id]"
+              @change="selectedChanged(item.id,$store.getters.getGoodsSelected[item.id])"
+            ></mt-switch>
             <img :src="item.thumb_path">
             <div class="info">
               <h1>{{item.title}}</h1>
@@ -76,6 +79,9 @@ export default {
     remove(id, i) {
       this.goodslist.splice(i, 1);
       this.$store.commit("removeFromCar", id);
+    },
+    selectedChanged(id, value) {
+      this.$store.commit("updateGoodsSelected", { id, selected: value });
     }
   },
   components: {
