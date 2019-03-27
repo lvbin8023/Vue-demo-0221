@@ -78,6 +78,19 @@ let store = new Vuex.Store({
         select[item.id] = item.selected;
       });
       return select;
+    },
+    getGoodsCountAndAmount(state) {
+      let c = {
+        count: 0,
+        amount: 0
+      };
+      state.car.forEach(item => {
+        if (item.selected) {
+          c.count += item.count;
+          c.amount += item.price * c.count;
+        }
+      });
+      return c;
     }
   }
 });
