@@ -38,6 +38,15 @@ let store = new Vuex.Store({
         }
       });
       localStorage.setItem("car", JSON.stringify(state.car));
+    },
+    removeFromCar(state, id) {
+      state.car.some((item, i) => {
+        if (item.id == id) {
+          state.car.splice(i, 1);
+          return true;
+        }
+      });
+      localStorage.setItem("car", JSON.stringify(state.car));
     }
   },
   getters: {
