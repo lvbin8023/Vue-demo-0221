@@ -1,7 +1,11 @@
 <template>
   <div class="app-container">
     <!-- 顶部 Header 区域 -->
-    <mt-header fixed title="前端开发-Vue项目"></mt-header>
+    <mt-header fixed title="前端开发-Vue项目">
+      <span slot="left" @click="goback" v-show="flag">
+        <mt-button icon="back">返回</mt-button>
+      </span>
+    </mt-header>
     <!-- 中间 router-view 区域 -->
     <transition>
       <router-view></router-view>
@@ -34,10 +38,28 @@
 import mui from "./lib/mui/js/mui.min.js";
 
 export default {
+  data() {
+    return {
+      flag: false
+    };
+  },
+  created() {
+    this.flag = this.$route.path === "/home" ? false : true;
+  },
   mounted() {
     mui("body").on("click", "a", function() {
       document.location.href = this.href;
     });
+  },
+  methods: {
+    goback() {
+      this.$router.go(-1);
+    }
+  },
+  watch: {
+    "$route.path": function(newVal) {
+      this.flag = newVal === "/home" ? false : true;
+    }
   }
 };
 </script>
